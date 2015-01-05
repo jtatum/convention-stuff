@@ -66,6 +66,7 @@ def read_csv(file_):
     result = []
     reader = csv.reader(file_)
     for row in reader:
+        # Todo: Accept row containing the ID as a parameter
         id_ = row[7]
         try:
             int(id_)
@@ -116,6 +117,8 @@ def wp_login(username, password, url):
 
 
 def main(username, password):
+    # Todo: The writey-bits don't need to be in scope with the readey-bits. Refactor that
+    # Todo: Accept filenames as parameters (and maybe use argparse for all these arguments)
     with open('/Users/jtatum/Downloads/fc15s.csv') as f:
         with open('/Users/jtatum/Downloads/fc15o.csv', 'wb') as out:
             writer = csv.writer(out)
